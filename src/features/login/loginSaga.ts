@@ -10,28 +10,28 @@ import {
 } from "./loginSlide";
 function* handleLogin() {
   yield takeEvery(loginHome.type, function* (payload: PayloadAction<ILogin>) {
-    // try {
-    //   const response: any = yield call(() =>
-    //     factories.requestLogin(payload.payload)
-    //   );
-    //   if (response.data.success) {
-    //     localStorage.setItem("token", response.data.data.token);
-    //     yield put({
-    //       type: loginHomeSuccess.type,
-    //       payload: response.data.data,
-    //     });
-    //   } else {
-    //     yield put({
-    //       type: loginHomeFailure.type,
-    //       payload: response.data.message,
-    //     });
-    //   }
-    // } catch (error) {
-    //   yield put({
-    //     type: loginHomeFailure.type,
-    //     // error
-    //   });
-    // }
+    try {
+      const response: any = yield call(() =>
+        factories.requestLogin(payload.payload)
+      );
+      if (response.data.success) {
+        localStorage.setItem("token", response.data.data.token);
+        yield put({
+          type: loginHomeSuccess.type,
+          payload: response.data.data,
+        });
+      } else {
+        yield put({
+          type: loginHomeFailure.type,
+          payload: response.data.message,
+        });
+      }
+    } catch (error) {
+      yield put({
+        type: loginHomeFailure.type,
+        // error
+      });
+    }
   });
 }
 
