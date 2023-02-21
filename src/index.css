@@ -15,3 +15,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@keyframes bg-gray-100 {
+  from {
+    background-color: #fff;
+  }
+  to {
+    background-color: #f3f4f6;
+  }
+}

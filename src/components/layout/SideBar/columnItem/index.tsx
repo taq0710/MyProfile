@@ -13,11 +13,11 @@ export default function ColumnItem(props: ColumnItemProps) {
         <ul>
           {listMenu.map((item) => (
             <li
-              className={`w-48 flex items-center  my-1 ml-0 rounded-full  font-normal text-xl ${item.key === 'home' ? 'font-medium' : ''
+              className={`w-48 flex items-center my-1 ml-0 rounded-full  font-normal text-xl ${item.key === 'home' ? 'font-medium' : ''
                 }`}
               key={item.key}
             >
-              <span className='flex p-3 hover:bg-gray-300 cursor-pointer rounded-full text-center'>
+              <span className='flex p-3 hover:bg-gray-200 cursor-pointer rounded-full text-center transition-all animate-bg-gray-100'>
                 {item.icon}
                 {item.title}
               </span>
