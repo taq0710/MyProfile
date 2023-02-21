@@ -5,6 +5,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      maxHeight: {
+        '950': '59.375rem',
+      },
+      colors: {
+        'tweet': 'rgb(29 155 240)',
+      },
       width: {
         '595': '37.188rem',
         '599': '37.438rem',
