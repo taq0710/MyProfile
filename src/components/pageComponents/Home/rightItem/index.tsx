@@ -1,12 +1,17 @@
 import * as React from 'react';
+import Search from './search';
+import Trendings from './trending';
 
-export interface  LeftitemComponentProps {
+export interface RightitemComponentProps {
 }
 
-export default function LeftitemComponent (props:  LeftitemComponentProps) {
+export default function RightitemComponent(props: RightitemComponentProps) {
   return (
-    <div className='flex-auto w-726 '>
-      Right Item
+    <div className='flex-auto w-rightitem sticky top-0'>
+      <Search />
+      <Trendings />
+      
+      
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from 'app/hooks';
 import SidebarComponent from 'components/layout/SideBar';
 import ViewpostComponent from 'components/pageComponents/Home/Viewpost';
-import LeftitemComponent from 'components/pageComponents/Home/rightItem';
+import RightitemComponent from 'components/pageComponents/Home/rightItem';
 import { loginHome } from 'features/login/loginSlide';
 import React,{useEffect} from 'react';
 
@@ -25,7 +25,7 @@ export default function Home (props:  HomeProps) {
     <div className='flex justify-center'>
       <SidebarComponent/>
       <ViewpostComponent/>
-      <LeftitemComponent/>
+      <RightitemComponent/>
     </div>
   );
 }
