@@ -20,7 +20,7 @@ const userFollow = [
 ]
 export default function WhotoFollow(props: WhotoFollowProps) {
     return (
-        <div className="w-1/2 flex justify-center ">
+        <div className="w-7/12 flex justify-center ">
             <div className="mt-3 ml-1  w-10/12">
                 <div className="w-full bg-gray-100 rounded-lg">
                     <p className="text-lg font-bold px-2 mb-2">Who to follow</p>
@@ -29,11 +29,11 @@ export default function WhotoFollow(props: WhotoFollowProps) {
                             <div className="flex ">
                                 <img className="mr-1" src={userFollow.imgurl} alt="" />
                                 <div>
-                                    <p className="text-sm font-bold hover:underline">{userFollow.username}</p>
-                                    <p className="text-sm text-gray-500">{`@${userFollow.useid}`}</p>
+                                    <p className="text-base font-medium hover:underline">{userFollow.username}</p>
+                                    <p className="text-base text-gray-500">{`@${userFollow.useid}`}</p>
                                 </div>
                             </div>
-                            <button className="bg-black px-3 py-1 rounded-full text-xs font-medium text-white">Follow</button>
+                            <button className="bg-black px-4 py-1 rounded-full text-sm font-medium text-white hover:bg-gray-700">Follow</button>
                         </div>
                         
                         ))}

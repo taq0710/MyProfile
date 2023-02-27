@@ -5,6 +5,7 @@ import { CiImageOn, CiLocationOn } from 'react-icons/ci'
 import { GiEarthAmerica } from 'react-icons/gi'
 import { RiEmotionHappyLine } from 'react-icons/ri'
 import { DropzoneOptions, useDropzone } from 'react-dropzone';
+import Tippy from '@tippyjs/react';
 export interface FromsProps {
 
 }
@@ -58,22 +59,69 @@ export default function Formstt(props: FromsProps) {
                         <GiEarthAmerica className="mr-2" />
                         Everyone can reply
                     </p>)}
-                <div className="flex justify-between">
-                    <div className="flex p-4 ">
-                        <div className='p-2 rounded-full hover:bg-hover' {...getRootProps()}>
-                            <input {...getInputProps()} />
-                            <CiImageOn className="cursor-pointer text-xl text-tweet hover:bg-hover rounded-full " />
-                        </div>
-                        <div className='p-2 rounded-full hover:bg-hover'><AiOutlineFileGif className="cursor-pointer text-xl text-tweet" /></div>
-                        <div className='p-2 rounded-full hover:bg-hover'><BiPoll className="cursor-pointer text-xl text-tweet" /></div>
-                        <div className='p-2 rounded-full hover:bg-hover'><RiEmotionHappyLine className="cursor-pointer text-xl text-tweet" /></div>
-                        <div className='p-2 rounded-full hover:bg-hover'><AiOutlineCalendar className="cursor-pointer text-xl text-tweet" /></div>
-                        <div className='p-2 rounded-full hover:bg-hover'><CiLocationOn className="cursor-pointer text-xl text-tweet" /></div>
+                <div className="flex justify-between pt-4">
+                    <div className="flex ">
+                        <Tippy
+                        delay={100}
+                            content='Media'
+                            placement='bottom'
+                            arrow={false}
+                            className='bg-gray-500  text-xs bottom-2'
+                        >
+                            <div className='p-2 rounded-full hover:bg-hover' {...getRootProps()}>
+                                <input {...getInputProps()} />
+                                <CiImageOn className="cursor-pointer text-xl text-tweet hover:bg-hover rounded-full " />
+                            </div>
+                        </Tippy>
+                        <Tippy 
+                        delay={100}
+                        content='Gif'
+                            placement='bottom'
+                            arrow={false}
+                            className='bg-gray-500 text-xs bottom-2'>
+                            <div className='p-2 rounded-full hover:bg-hover'>
+                                <AiOutlineFileGif className="cursor-pointer text-xl text-tweet" />
+                            </div></Tippy>
+                        <Tippy 
+                        delay={100}
+                        content='Poll'
+                            placement='bottom'
+                            arrow={false}
+                            className='bg-gray-500 text-xs bottom-2'>
+                            <div className='p-2 rounded-full hover:bg-hover'>
+                                <BiPoll className="cursor-pointer text-xl text-tweet" />
+                            </div>
+                        </Tippy>
+                        <Tippy 
+                        delay={100}
+                        content='Emoji'
+                            placement='bottom'
+                            arrow={false}
+                            className='bg-gray-500 text-xs bottom-2'>
+                            <div className='p-2 rounded-full hover:bg-hover'>
+                                <RiEmotionHappyLine className="cursor-pointer text-xl text-tweet" />
+                            </div>
+                        </Tippy>
+                        <Tippy
+                        delay={100}
+                            content='Schedule'
+                            placement='bottom' 
+                            arrow={false}
+                            className='bg-gray-500 text-xs bottom-2'>
+                            <div className='p-2 rounded-full hover:bg-hover'>
+                                <AiOutlineCalendar className="cursor-pointer text-xl text-tweet" />
+                            </div>
+                        </Tippy>
+                       
+                            <div className='p-2 '>
+                                <CiLocationOn className="cursor-pointer text-xl text-tweet" />
+                            </div>
+                        
                     </div>
                     <button
                         ref={buttonRef}
                         disabled={!inputValue.trim()}
-                        className="bg-dftweet mr-3 w-16 h-9 text-slate-50 font-bold rounded-full">
+                        className="bg-dftweet mr-3 w-16 h-8 text-slate-50 font-bold text-sm rounded-full">
                         Tweet
                     </button>
                 </div>

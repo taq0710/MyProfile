@@ -51,7 +51,7 @@ export default function Trendings(props: TrendingsProps) {
   
   return (
     <div className='sticky top-0'>
-      <div className="w-1/2 flex justify-center ">
+      <div className="w-7/12 flex justify-center ">
         <div className=" ml-1 p w-10/12">
           <div className="w-full bg-gray-100 rounded-lg">
             <p className='text-lg font-bold px-2 pb-2 pt-1'>Trendings for you</p>

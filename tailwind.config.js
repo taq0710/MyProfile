@@ -5,8 +5,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'boxsd': '0 0 10px 4px rgb(0 0 0 / 0.1)',
+      },
       padding: {
         'tick': '0.5px',
+      },
+      height:{
+        '165' : '15rem',
+        '920' : '11rem'
       },
       minHeight:{
         '950':'59.375rem'
