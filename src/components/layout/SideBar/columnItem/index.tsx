@@ -7,13 +7,13 @@ export interface ColumnItemProps { }
 
 export default function ColumnItem(props: ColumnItemProps) {
   return (
-    <div className='w-64 flex flex-col justify-between h-screen overflow-y-auto'>
+    <div className='w-64 flex flex-col justify-between h-screen overflow-y-auto '>
       <div>
         <Logo />
         <ul>
           {listMenu.map((item) => (
             <li
-              className={`w-48 flex items-center my-1 ml-0 rounded-full  font-normal text-xl ${item.key === 'home' ? 'font-medium' : ''
+              className={`w-48 flex items-center my-1 ml-0 rounded-full  font-normal text-xl ${item.key === 'home' ? 'font-semibold' : ''
                 }`}
               key={item.key}
             >
