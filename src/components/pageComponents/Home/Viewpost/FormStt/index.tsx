@@ -48,7 +48,6 @@ export default function Formstt(props: FromsProps) {
                         placeholder="What's happening?"
                         value={inputValue}
                         onFocus={() => setShowP(true)}
-                        onBlur={() => setShowP(false)}
                         onChange={handleInputChange}
                         onKeyDown={handleInputKeyDown}
                     />
@@ -62,7 +61,7 @@ export default function Formstt(props: FromsProps) {
                 <div className="flex justify-between pt-4">
                     <div className="flex ">
                         <Tippy
-                        delay={100}
+                            delay={100}
                             content='Media'
                             placement='bottom'
                             arrow={false}
@@ -73,18 +72,18 @@ export default function Formstt(props: FromsProps) {
                                 <CiImageOn className="cursor-pointer text-xl text-tweet hover:bg-hover rounded-full " />
                             </div>
                         </Tippy>
-                        <Tippy 
-                        delay={100}
-                        content='Gif'
+                        <Tippy
+                            delay={100}
+                            content='Gif'
                             placement='bottom'
                             arrow={false}
                             className='bg-gray-500 text-xs bottom-2'>
                             <div className='p-2 rounded-full hover:bg-hover'>
                                 <AiOutlineFileGif className="cursor-pointer text-xl text-tweet" />
                             </div></Tippy>
-                        <Tippy 
-                        delay={100}
-                        content='Poll'
+                        <Tippy
+                            delay={100}
+                            content='Poll'
                             placement='bottom'
                             arrow={false}
                             className='bg-gray-500 text-xs bottom-2'>
@@ -92,9 +91,9 @@ export default function Formstt(props: FromsProps) {
                                 <BiPoll className="cursor-pointer text-xl text-tweet" />
                             </div>
                         </Tippy>
-                        <Tippy 
-                        delay={100}
-                        content='Emoji'
+                        <Tippy
+                            delay={100}
+                            content='Emoji'
                             placement='bottom'
                             arrow={false}
                             className='bg-gray-500 text-xs bottom-2'>
@@ -103,25 +102,25 @@ export default function Formstt(props: FromsProps) {
                             </div>
                         </Tippy>
                         <Tippy
-                        delay={100}
+                            delay={100}
                             content='Schedule'
-                            placement='bottom' 
+                            placement='bottom'
                             arrow={false}
                             className='bg-gray-500 text-xs bottom-2'>
                             <div className='p-2 rounded-full hover:bg-hover'>
                                 <AiOutlineCalendar className="cursor-pointer text-xl text-tweet" />
                             </div>
                         </Tippy>
-                       
-                            <div className='p-2 '>
-                                <CiLocationOn className="cursor-pointer text-xl text-tweet" />
-                            </div>
-                        
+
+                        <div className='p-2 '>
+                            <CiLocationOn className="cursor-pointer text-xl text-tweet" />
+                        </div>
+
                     </div>
                     <button
                         ref={buttonRef}
                         disabled={!inputValue.trim()}
-                        className="bg-dftweet mr-3 w-16 h-8 text-slate-50 font-bold text-sm rounded-full">
+                        className={`bg-dftweet mr-3 w-16 h-8 text-slate-50 font-bold text-sm rounded-full ${inputValue.trim() ? 'bg-tweet' : ''}`}>
                         Tweet
                     </button>
                 </div>

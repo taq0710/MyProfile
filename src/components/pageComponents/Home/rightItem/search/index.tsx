@@ -14,7 +14,7 @@ export default function Search(props: SearchProps) {
   };
 
   return (
-    <div className='sticky top-0 z-10 bg-white'>
+    <div className=' bg-white'>
       <div className="w-7/12 flex justify-center">
         <div className="relative flex items-center mt-3 py-2 w-10/12  ">
           <AiOutlineSearch className="text-xl mx-2 absolute text-gray-500" />
