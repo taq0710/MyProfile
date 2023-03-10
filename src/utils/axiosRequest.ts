@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 
 import { TOKEN } from "constants/storage";
-const BACKEND_URL =
+const BACKEND_URL = 
   process.env.REACT_APP_BACKEND_URL || "http://localhost:4000";
 export const axiosRequest = async (
   config: AxiosRequestConfig,

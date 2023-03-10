@@ -31,6 +31,7 @@ module.exports = {
         hover2bg: "rgb(0, 186, 124, 0.1)",
         hover3: "rgb(249, 24, 128)",
         hover3bg: "rgba(249, 24, 128, 0.1)",
+        btndel: "rgb(244, 33, 46)"
       },
       width: {
         sidebar: "26%",
