@@ -1,23 +1,26 @@
 import { createSlice, PayloadAction, Draft } from "@reduxjs/toolkit";
 import { RootState } from "app/store";
-import { Post } from "interfaces";
+import {Post} from "interfaces";
 
 interface PostState {
   posts: Post[];
   status: "nothing" | "loading" | "succeeded" | "failed";
   error: string | null;
+  postSelected: Post|null
 }
 
 const initialState: PostState = {
   posts: [],
   status: "nothing",
   error: null,
+  postSelected: null
 };
 
 export const postSlice = createSlice({
   name: "post",
   initialState,
   reducers: {
+    
     getPosts(state) {
       state.status = "loading";
     },
@@ -36,13 +39,11 @@ export const postSlice = createSlice({
       state.status = "succeeded";
       state.posts.push(action.payload);
     },
-    addPostFailure: (
-      state: Draft<PostState>,
-      action: PayloadAction<string>
-    ) => {
+    addPostFailure: (state: Draft<PostState>, action: PayloadAction<string>) => {
       state.status = "failed";
       state.error = action.payload;
     },
+    
     editPost: (state: Draft<PostState>, action: PayloadAction<Post>) => {
       state.status = "loading";
     },
@@ -83,6 +84,9 @@ export const postSlice = createSlice({
       state.status = "failed";
       state.error = action.payload;
     },
+    postSeleted:(state: Draft<PostState>, action: PayloadAction<Post>) => {
+      state.postSelected = action.payload
+    },
   },
 });
 
@@ -99,8 +103,11 @@ export const {
   removePost,
   removePostFailure,
   removePostSuccess,
+  postSeleted
 } = postSlice.actions;
 
 export const selectAllPosts = (state: RootState) => state.post.posts;
+export const selectPosts = (state: RootState) => state.post.postSelected;
+
 
 export default postSlice.reducer;

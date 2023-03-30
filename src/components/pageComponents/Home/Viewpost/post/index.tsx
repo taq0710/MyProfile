@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { getPosts, selectAllPosts, removePost, editPost } from 'features/post/postSlide'
+import { getPosts, selectAllPosts, removePost, postSeleted } from 'features/post/postSlide'
 import { AiOutlineRetweet, AiOutlineHeart, AiOutlineFileText } from 'react-icons/ai'
 import { MdComment } from 'react-icons/md'
 import { BsDot, BsUpload } from 'react-icons/bs'
@@ -13,6 +13,8 @@ import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import { useEffect } from 'react'
 import ProfileInfo from 'components/pageComponents/Home/Viewpost/post/profileInfo'
+import Formstt from '../FormStt'
+
 
 
 export interface PostsProps { }
@@ -25,11 +27,26 @@ export default function Posts(props: PostsProps) {
     }, [dispatch]);
 
     const deletePosts = (postId: any) => {
-        dispatch(removePost(postId));
+        const confirmed = window.confirm("Bạn có chắc chắn muốn xóa bài đăng này?");
+        if (confirmed) {
+            dispatch(removePost(postId));
+        }
     };
+    const handleSubmit = (status: string) => {
+
+    };
+
+    const handleChangeClick = (post: any) => {
+        // tạo 1 cái redux postEdit
+        // dispatch cái post vào
+        dispatch(postSeleted(post))
+        console.log(post);
+    };
+
     return (
         <>
-            {posts.map((post) => (
+            <Formstt onSubmit={handleSubmit} />
+            {posts.slice().reverse().map((post) => (
                 <div className='cursor-pointer hover:bg-gray-100 border-b' >
                     <div className='flex items-center w-full justify-between'>
                         <div className='flex items-center mt-1 w-10/12'>
@@ -120,7 +137,7 @@ export default function Posts(props: PostsProps) {
                                         <div className=' ml-20 w-64 bg-white rounded-lg shadow-boxsd' tabIndex={-1} {...attrs}>
                                             <div className=''>
                                                 <button className='w-full py-2 flex items-center text-btndel hover:bg-gray-100' onClick={() => deletePosts(post._id)}><HiOutlineTrash className='ml-3 text-lg' /><span className='py-1 flex px-4 text-base font-bold'>Delete</span></button>
-                                                <button className='w-full py-2 flex items-center hover:bg-gray-100'><BiPin className='ml-3 text-lg' /><span className='py-1 flex px-4 text-base font-bold'>Pin to your profile</span></button>
+                                                <button className='w-full py-2 flex items-center hover:bg-gray-100' onClick={() => handleChangeClick(post)}><BiPin className='ml-3 text-lg' /><span className='py-1 flex px-4 text-base font-bold'>Change</span></button>
                                                 <button className='w-full py-2 flex items-center hover:bg-gray-100'><AiOutlineFileText className='ml-3 text-lg' /><span className='py-1 flex px-4 text-base font-bold'>Add/remove@{post.userId} from list</span></button>
                                                 <button className='w-full py-2 flex items-center hover:bg-gray-100'><FaRegComment className='ml-3 text-lg' /><span className='py-1 flex px-4 text-base font-bold'>Change who can reply</span></button>
                                                 <button className='w-full py-2 flex items-center hover:bg-gray-100'><BiCodeAlt className='ml-3 text-lg' /><span className='py-1 flex px-4 text-base font-bold'>Embed Tweet</span></button>
@@ -138,7 +155,7 @@ export default function Posts(props: PostsProps) {
                                 </p>
                             </div>
                             <div className='mr-4'>
-                                {/* <img className='rounded-2xl' src={post.image} alt="" /> */}
+                                <img className='rounded-2xl' src={post.image} alt="" />
                                 <p className='text-sm text-gray-500'>from</p>
                                 <div className='w-9/12 flex items-center justify-between text-gray-500 mb-2'>
                                     <Tippy

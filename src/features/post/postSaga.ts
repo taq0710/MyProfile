@@ -39,7 +39,7 @@ function* handleAddPost() {
 }
 
 function* handleEditPost() {
-  yield takeEvery(editPost.type, function* (payload: PayloadAction<string>) {
+  yield takeEvery(editPost.type, function* (payload: PayloadAction<Post>) {
     try {
       const response: any = yield call(factories.editPost, payload.payload);
       yield put(editPostSuccess(response));

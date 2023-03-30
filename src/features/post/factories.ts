@@ -17,10 +17,12 @@ const factories = {
       data: data,
     });
   },
-  editPost: (id: string) => {
+
+  editPost: (data: Post) => {
     return axiosRequest({
       method: "put",
-      url: `/posts/${id}`,
+      url: `/posts/${data._id}`,
+      data: data,
     });
   },
   removePost: (id: string) => {

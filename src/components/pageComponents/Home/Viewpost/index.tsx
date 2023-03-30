@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Formstt from './FormStt';
 import Posts from './post';
 import Following from './post/following';
+
 
 export interface ViewpostComponentProps {
 
@@ -23,7 +23,8 @@ export default function ViewpostComponent(props: ViewpostComponentProps) {
           >
             <span>
               <p className='my-2'>For you</p>
-              {activeTab==="For you" && <div className='bg-tweet w-full h-1 rounded-full'></div>}
+              {activeTab==="ForYou" && <div className='bg-tweet w-full h-1 rounded-full'></div>}
+
             </span>
           </p>
           <p
@@ -39,7 +40,6 @@ export default function ViewpostComponent(props: ViewpostComponentProps) {
           </p>
         </div>
       </div>
-      <Formstt />
       {activeTab === "ForYou" ? <Posts/> : <Following />}
     </div>
   );
