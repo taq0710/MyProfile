@@ -36,7 +36,7 @@ export default function NavBar(props: NavBarProps) {
     <div>
       <div className='h-[50px] max-w-[1000px] mx-auto my-0 flex items-start justify-between'>
         <div className='flex items-center h-full w-[30%]'>
-          <img className='h-[50px] p-1 rounded-full mr-3' src="https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-1/330332614_943204960202084_108585497636149841_n.jpg?stp=dst-jpg_p200x200&_nc_cat=111&ccb=1-7&_nc_sid=7206a8&_nc_ohc=8rkwOl5NsxEAX-QrExV&_nc_ht=scontent.fdad3-5.fna&oh=00_AfBDFdIDyVSw7HETFV5-UFsJjVHhCKBXMPeJ5J_npvbhjQ&oe=645B55F3" alt="" />
+          <img className='h-[50px] p-1 rounded-full mr-3' src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/315425329_439798211645408_2859240164986267205_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=MKjhBDs_WaoAX-PfT6w&_nc_ht=scontent.fsgn2-6.fna&oh=00_AfAI0d2FR4cg3Sc4tlyyAcik9mqCiWoFzXe1OY_Kk4jfLQ&oe=6470883A" alt="" />
           <p className={` text-xl font-semibold ${isToggled ? 'text-yellow-200' : ''}`}>{language ? "Trịnh Anh Quốc" : "Trinh Anh Quoc"}</p>
         </div>
         <div className='flex items-center h-full w-[50%] justify-between'>

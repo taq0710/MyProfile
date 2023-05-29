@@ -33,7 +33,7 @@ export default function Info(props: InfoProps) {
                         <Button text="Contact Me" icon={<FaRegPaperPlane />} onClick={handleClick} />
                     </div>
             </div>
-            <div className='w-[20rem]'><img className='rounded-lg' src="https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-6/320833408_1939569906247014_326945845671687597_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=rnLfigd2gvIAX-hEcfm&_nc_ht=scontent.fdad3-1.fna&oh=00_AfB5WchOW5TJBvo82_0az9mDlpgjTSqKJ8c9nMsEVqHAJw&oe=645A83C0" alt="" /></div>
+            <div className='w-[20rem]'><img className='rounded-full' src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/320833408_1939569906247014_326945845671687597_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=Jlz3TQ33YjoAX8UzqcN&_nc_ht=scontent.fsgn2-6.fna&oh=00_AfASu_89KECArdttJcKW1NIaGjIOQ4m4ndi-rRlv9eaF8g&oe=64704480" alt="" /></div>
         </div>
     );
 }
